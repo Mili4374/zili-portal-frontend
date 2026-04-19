@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { ArrowLeft, MapPin, Plus } from 'lucide-react';
 
 // 1. Import your new JPEG files from the assets folder
-import puneSky from '../assets/pune-sky.jpeg';
-import blrSky from '../assets/blr-sky.jpeg';
+import puneSky from '../assets/pune-sunset.jpeg';
+import blrSky from '../assets/blr-sunset.jpeg';
 
 const SplitGallery = ({ onBack }) => {
   // Pre-filled with your real memories!
