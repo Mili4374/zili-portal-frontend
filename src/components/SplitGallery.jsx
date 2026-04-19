@@ -1,27 +1,27 @@
 import { useState } from 'react';
 import { ArrowLeft, MapPin, Plus } from 'lucide-react';
 
-// 1. Import your new JPEG files from the assets folder
-import puneSky from '../assets/pune-sunset.jpeg';
-import blrSky from '../assets/blr-sunset.jpeg';
+// 1. Import your New Selfies + Existing Sunset Skies
+import miliSelfie from '../assets/mili-pune.jpeg';
+import zaheenSelfie from '../assets/zaheen-blr.jpeg';
+import puneSky from '../assets/pune-sky.jpg';
+import blrSky from '../assets/blr-sky.jpg';
 
 const SplitGallery = ({ onBack }) => {
-  // Pre-filled with your real memories!
   const [entries, setEntries] = useState([
     {
       id: 1,
-      title: "Morning Coffee Routine ☕",
+      title: "Mili & Zaheen 🤍",
       date: "April 19, 2026",
-      puneImg: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=500&auto=format&fit=crop",
-      bangaloreImg: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=500&auto=format&fit=crop",
-      puneCaption: "Mili's Desk",
-      bangaloreCaption: "Zaheen's Setup"
+      puneImg: miliSelfie,
+      bangaloreImg: zaheenSelfie,
+      puneCaption: "Mili in Pune",
+      bangaloreCaption: "Zaheen in Bangalore"
     },
     {
       id: 2,
       title: "Evening Skies 🌅",
       date: "April 18, 2026",
-      // 2. We use the imported variables here instead of URLs
       puneImg: puneSky,
       bangaloreImg: blrSky,
       puneCaption: "My view from Pune",
@@ -75,7 +75,7 @@ const SplitGallery = ({ onBack }) => {
       <button 
         className="nudge-btn" 
         style={{ marginTop: '10px' }} 
-        onClick={() => alert("Image uploading will be unlocked when we connect the Cloud Storage!")}
+        onClick={() => alert("Ready for more memories!")}
       >
         <Plus size={20} /> Add New Entry
       </button>
