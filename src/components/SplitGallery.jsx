@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import { ArrowLeft, MapPin, Plus } from 'lucide-react';
 
+// 1. Import your new JPEG files from the assets folder
+import puneSky from '../assets/pune-sky.jpeg';
+import blrSky from '../assets/blr-sky.jpeg';
+
 const SplitGallery = ({ onBack }) => {
-  // Pre-filled with some aesthetic placeholders so it looks great immediately!
+  // Pre-filled with your real memories!
   const [entries, setEntries] = useState([
     {
       id: 1,
@@ -17,17 +21,20 @@ const SplitGallery = ({ onBack }) => {
       id: 2,
       title: "Evening Skies 🌅",
       date: "April 18, 2026",
-      puneImg: "https://images.unsplash.com/photo-1588636171926-2a62ffb54cc2?q=80&w=500&auto=format&fit=crop",
-      bangaloreImg: "https://images.unsplash.com/photo-1594161706173-aa99d518d6e3?q=80&w=500&auto=format&fit=crop",
-      puneCaption: "Pune Sunset",
-      bangaloreCaption: "Bangalore Clouds"
+      // 2. We use the imported variables here instead of URLs
+      puneImg: puneSky,
+      bangaloreImg: blrSky,
+      puneCaption: "My view from Pune",
+      bangaloreCaption: "Zaheen's view from BLR"
     }
   ]);
 
   return (
     <div className="view-container">
       <div className="view-header">
-        <button onClick={onBack} className="back-btn"><ArrowLeft size={24} /></button>
+        <button onClick={onBack} className="back-btn">
+          <ArrowLeft size={24} />
+        </button>
         <h2 style={{ margin: 0 }}>Split Diary</h2>
       </div>
 
@@ -65,7 +72,11 @@ const SplitGallery = ({ onBack }) => {
         ))}
       </div>
 
-      <button className="nudge-btn" style={{ marginTop: '10px' }} onClick={() => alert("Image uploading will be unlocked when we connect the Cloud Storage!")}>
+      <button 
+        className="nudge-btn" 
+        style={{ marginTop: '10px' }} 
+        onClick={() => alert("Image uploading will be unlocked when we connect the Cloud Storage!")}
+      >
         <Plus size={20} /> Add New Entry
       </button>
     </div>
