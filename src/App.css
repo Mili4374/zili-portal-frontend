@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #ff4d6d;
+  --bg-light: #fff0f3;
+  --text-main: #590d22;
+  --text-muted: #800f2f;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffe5ec;
+  display: flex;
+  justify-content: center;
+  padding: 40px 10px; /* Added more padding so it doesn't hug the top */
+  color: var(--text-main);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 1. WIDER, Airy Glass Container */
+.dashboard-container {
+  width: 95%;
+  max-width: 550px; /* Much wider now! */
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 40px;
+  padding: 40px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 20px 40px rgba(255, 77, 109, 0.1);
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. Header spacing */
+.header { 
+  text-align: center; 
+  margin-bottom: 30px; 
+}
+.header h1 { 
+  font-weight: 800; 
+  font-size: 2.5rem; 
+  color: var(--primary); 
+  margin: 0; 
+  letter-spacing: -1px;
+}
+.header p { 
+  font-weight: 600; 
+  color: var(--text-main); 
+  font-size: 1rem; 
+  margin: 5px 0 0 0; 
+}
+
+/* 3. The Original White Cards */
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(255, 77, 109, 0.04);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--text-main);
+  font-size: 1.2rem;
+}
+
+/* 4. Fix for Countdown Stacking */
+.card > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+/* 5. The Floating Nav Grid */
+.nav-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.nav-btn {
+  background: white;
+  border: none;
+  border-radius: 24px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 77, 109, 0.04);
+  transition: transform 0.2s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-5px);
+}
+
+.icon-wrapper {
+  background: var(--bg-light);
+  padding: 16px;
+  border-radius: 50%;
+  color: var(--primary);
+  display: flex;
+}
+
+.nav-title { font-weight: 800; font-size: 1.1rem; margin: 0; color: var(--text-main); }
+.nav-sub { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+
+/* 6. Sub-Views & Text Areas */
+.view-container {
+  animation: fadeIn 0.3s ease;
+  flex-grow: 1;
+}
+
+.view-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.back-btn {
+  background: white;
+  border: none;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(255, 77, 109, 0.1);
+}
+
+.note-textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid var(--bg-light);
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.note-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* 7. The Nudge Button */
+.nudge-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary) 0%, #ff758f 100%);
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 22px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: auto;
+  box-shadow: 0 10px 20px rgba(255, 77, 109, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Split Diary Gallery Styles --- */
+.gallery-list {
+  max-height: 55vh;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.split-card {
+  padding: 20px 15px;
+}
+
+.split-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.split-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.split-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.split-images-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.split-side {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.split-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 3px solid white;
+}
+
+.split-caption {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 8px 0 0 0;
+  color: var(--text-main);
+}
+
+.split-divider {
+  width: 2px;
+  height: 120px;
+  background: rgba(255, 77, 109, 0.2);
+  border-radius: 2px;
+}
+
+.location-tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.bangalore-tag {
+  color: #023e8a; /* A slight color difference for Zaheen's city */
+}

@@ -1,0 +1,15 @@
+{
+  "short_name": "Zili",
+  "name": "Zili Portal",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffe5ec",
+  "background_color": "#ffe5ec"
+}
