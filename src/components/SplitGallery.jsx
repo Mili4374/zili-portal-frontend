@@ -4,8 +4,8 @@ import { ArrowLeft, MapPin, Plus } from 'lucide-react';
 // 1. Import your New Selfies + Existing Sunset Skies
 import miliSelfie from '../assets/mili-pune.jpeg';
 import zaheenSelfie from '../assets/zaheen-blr.jpeg';
-import puneSky from '../assets/pune-sunset.jpg';
-import blrSky from '../assets/blr-sunset.jpg';
+import puneSky from '../assets/pune-sunset.jpeg';
+import blrSky from '../assets/blr-sunset.jpeg';
 
 const SplitGallery = ({ onBack }) => {
   const [entries, setEntries] = useState([
